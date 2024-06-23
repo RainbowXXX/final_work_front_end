@@ -1,0 +1,60 @@
+.ai-chatbot-container {
+    width: 100%;
+    max-width: 1400px; /* 设置最大宽度，避免在大屏幕上过度拉伸 */
+    margin: 0 auto;
+  }
+  
+  .chat-container {
+    background-color: #f0f2f5;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 80vh; /* 设置聊天框的高度为视口高度的80% */
+  }
+  
+  .chatbox {
+    height: calc(80vh - 56px); /* 减去底部输入框的高度 */
+    overflow-y: scroll;
+    padding: 20px;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  
+  .user-message {
+    background-color: #e2f7cb;
+    align-self: flex-start;
+  }
+  
+  .ai-message {
+    background-color: #ffffff;
+    align-self: flex-end;
+  }
+  
+  .message-content {
+    display: block;
+    padding: 5px;
+    word-wrap: break-word;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #d9d9d9;
+  }
+  
+  .message-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .send-button {
+    width: 100px;
+  }
+  

@@ -1,0 +1,39 @@
+/* AdminLogin.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .login-container {
+    background-image: url('/path/to/your/background/image.jpg'); /* 更新为实际的图片路径 */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+  }
+  
+  .login-form {
+    max-width: 100%;
+  }
+  
+  .login-form-button {
+    width: 100%;
+    height: 40px;
+  }
+  
