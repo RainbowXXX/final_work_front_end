@@ -109,7 +109,7 @@ const CartPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ padding: '0 50px' }}>
       <h2>购物车</h2>
       <div style={{ marginBottom: '10px' }}>
         <Checkbox checked={selectAll} onChange={handleSelectAll}>全选</Checkbox>

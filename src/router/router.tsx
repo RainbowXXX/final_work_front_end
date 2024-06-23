@@ -9,6 +9,11 @@ import ContactPage from "../pages/ContactPage";
 import CartPage from "../pages/CartPage";
 import AdminPage from "../pages/admin/AdminPage";
 import AdminLogin from "../pages/admin/AdminLogin";
+import UserPage from "../pages/admin/UserPage";
+import GoodsPage from "../pages/admin/GoodsPage";
+import OrderPage from "../pages/admin/OrderPage";
+
+
 
 const router = createBrowserRouter([
     {
@@ -26,7 +31,12 @@ const router = createBrowserRouter([
     }, 
     {
       path: "/admin",
-      element: <AdminPage/>
+      element: <AdminPage/>,
+      children: [
+        { path: 'user', element: <UserPage /> },
+        { path: 'goods', element: <GoodsPage /> },
+        { path: 'order', element: <OrderPage /> },
+      ]
     }, 
     {
       path: "/adminlogin",

@@ -1,12 +1,11 @@
-import { Layout, Menu, Breadcrumb, Table, Input, Button, Space } from 'antd';
+import { Layout, Table, Input, Button, Space } from 'antd';
 
-
-const { Header, Content, Sider } = Layout;
+const { Content } = Layout;
 const { Search } = Input;
 
 const dataSource = [
     {
-        key: '1',
+        index: '1',
         username: 'user',
         phone: '123123123',
         nickname: 'asd',
@@ -14,7 +13,13 @@ const dataSource = [
     }
 ];
 
+
 const columns = [
+    {
+        title: '序号',
+        dataIndex: 'index',
+        key: 'index',
+    },
     {
         title: '用户名',
         dataIndex: 'username',
@@ -35,24 +40,27 @@ const columns = [
         dataIndex: 'address',
         key: 'address',
     },
-    
+
 ];
 
-const UserPage = () => {
+const UserPage: React.FC = () => {
     const onSearch = (value: any) => console.log(value);
-    return (<Content
-        className="site-layout-background"
-        style={{
-            padding: 24,
-            margin: 0,
-            minHeight: 280,
-        }}
-    >
-        <Space direction="vertical" style={{ width: '100%' }}>
-            <Search placeholder="请输入用户名" onSearch={onSearch} enterButton />
-            <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }} />
-        </Space>
-    </Content>
+    return (
+        <div>
+            <Content
+                className="site-layout-background"
+                style={{
+                    padding: 24,
+                    margin: 0,
+                    minHeight: 280,
+                }}
+            >
+                <Space direction="vertical" style={{ width: '100%' }}>
+                    <Search placeholder="请输入用户名" onSearch={onSearch} enterButton />
+                    <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }} />
+                </Space>
+            </Content>
+        </div>
     )
 }
 
