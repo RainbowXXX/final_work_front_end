@@ -23,10 +23,10 @@ function Navbar() {
     <Header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div className="logo" />
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{ flex: 1 }}>
-        <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => { history('/index') }}>Home</Menu.Item>
-        <Menu.Item key="2" icon={<ShopOutlined />} onClick={() => { history('/shop') }}>Shop</Menu.Item>
-        <Menu.Item key="3" icon={<PhoneOutlined />} onClick={() => { history('/contact') }}>Contact</Menu.Item>
-        <Menu.Item key="4" icon={<ShoppingCartOutlined />} onClick={() => { history('/cart') }}>Cart</Menu.Item>
+        <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => { history('/index') }}>首页</Menu.Item>
+        <Menu.Item key="2" icon={<ShopOutlined />} onClick={() => { history('/shop') }}>商品</Menu.Item>
+        <Menu.Item key="3" icon={<PhoneOutlined />} onClick={() => { history('/contact') }}>客服</Menu.Item>
+        <Menu.Item key="4" icon={<ShoppingCartOutlined />} onClick={() => { history('/cart') }}>购物车</Menu.Item>
       </Menu>
       <Space>
         {isLoggedIn ? (
@@ -37,12 +37,18 @@ function Navbar() {
           </Dropdown>
         ) : (
           <>
-            <Button type="link" onClick={() => setIsLogging(true)}>Login</Button>
-            <Button type="link" onClick={() => setIsRegister(true)}>Register</Button>
+            <Button type="link" onClick={() => setIsLogging(true)}>登录</Button>
+            <Button type="link" onClick={() => setIsRegister(true)}>注册</Button>
           </>
         )}
       </Space>
-      <Modal title="登录" open={isLogging} onOk={() => setIsLogging(false)} onCancel={() => setIsLogging(false)} okText="登录" cancelText="取消">
+      <Modal title="登录" open={isLogging} onOk={() => setIsLogging(false)} onCancel={() => setIsLogging(false)} okText="登录" cancelText="取消"
+        footer={(
+          <div style={{ textAlign: 'center' }}>
+            <Button onClick={() => setIsLogging(false)} style={{ marginRight: 8 }}>取消</Button>
+            <Button type="primary" onClick={() => setIsLogging(false)}>登录</Button>
+          </div>
+        )}>
         <Form
           name="login"
           layout="vertical"
@@ -77,13 +83,27 @@ function Navbar() {
         </Form>
       </Modal>
 
-      <Modal title="注册" open={isRegister} onOk={() => setIsRegister(false)} onCancel={() => setIsRegister(false)} okText="注册" cancelText="取消">
+      <Modal title="注册" open={isRegister} onOk={() => setIsRegister(false)} onCancel={() => setIsRegister(false)} okText="注册" cancelText="取消"
+        footer={(
+          <div style={{ textAlign: 'center' }}>
+            <Button onClick={() => setIsRegister(false)} style={{ marginRight: 8 }}>取消</Button>
+            <Button type="primary" onClick={() => setIsRegister(false)}>注册</Button>
+          </div>
+        )}>
         <Form
           name="register"
           layout="vertical"
           initialValues={{ remember: true }}
           onFinish={(values) => console.log('Form Values:', values)}
         >
+          <Form.Item
+            label="昵称"
+            name="nickname"
+            rules={[{ required: true, message: '请输入昵称!' }]}
+            style={{ marginBottom: 8 }}
+          >
+            <Input placeholder="请输入昵称" />
+          </Form.Item>
           <Form.Item
             label="账号"
             name="username"
@@ -119,6 +139,24 @@ function Navbar() {
             style={{ marginBottom: 8 }}
           >
             <Input.Password placeholder="请再次输入密码" />
+          </Form.Item>
+          <Form.Item
+            label="手机号"
+            name="phone"
+            rules={[
+              { required: true, message: '请输入手机号!' },
+              { pattern: /^1[3-9]\d{9}$/, message: '请输入有效的手机号!' }
+            ]}
+            style={{ marginBottom: 8 }}
+          >
+            <Input placeholder="请输入手机号" />
+          </Form.Item>
+          <Form.Item
+            label="地址"
+            name="adress"
+            style={{ marginBottom: 8 }}
+          >
+            <Input placeholder="请输入地址" />
           </Form.Item>
         </Form>
       </Modal>

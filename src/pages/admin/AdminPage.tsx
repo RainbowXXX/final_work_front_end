@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Table, Input, Button, Space } from 'antd';
-import { HomeOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
+import { HomeOutlined, SettingOutlined, UserOutlined, ShoppingOutlined, FileDoneOutlined, LogoutOutlined } from '@ant-design/icons';
 
 const { Header, Content, Sider } = Layout;
 const { Search } = Input;
@@ -76,14 +76,12 @@ const AdminPage = () => {
                         defaultOpenKeys={['sub1']}
                         style={{ height: '100%', borderRight: 0 }}
                     >
-                        <Menu.Item key="1" icon={<UserOutlined />}>
+                        <Menu.Item key="1" icon={<SettingOutlined />}>
                             基本设置
                         </Menu.Item>
-
-                        <Menu.Item key="3">用户管理</Menu.Item>
-                        <Menu.Item key="4">商品管理</Menu.Item>
-                        <Menu.Item key="5">订单管理</Menu.Item>
-
+                        <Menu.Item key="3" icon={<UserOutlined />}>用户管理</Menu.Item>
+                        <Menu.Item key="4" icon={<ShoppingOutlined />}>商品管理</Menu.Item>
+                        <Menu.Item key="5" icon={<FileDoneOutlined />}>订单管理</Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
