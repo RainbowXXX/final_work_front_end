@@ -112,7 +112,7 @@ const CartPage: React.FC = () => {
     <div>
       <h2>购物车</h2>
       <div style={{ marginBottom: '10px' }}>
-        <Checkbox checked={selectAll} style={{ width: 'auto' }}>全选</Checkbox>
+        <Checkbox checked={selectAll} onChange={handleSelectAll}>全选</Checkbox>
       </div>
       <Table
         columns={columns}

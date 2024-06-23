@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Router, useNavigate } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Table, Input, Button, Space } from 'antd';
 import { HomeOutlined, SettingOutlined, UserOutlined, ShoppingOutlined, FileDoneOutlined, LogoutOutlined } from '@ant-design/icons';
 
@@ -11,9 +11,7 @@ const dataSource = [
         key: '1',
         username: 'user',
         phone: '123123123',
-        realname: 'asd',
-        gender: '男',
-        email: '22',
+        nickname: 'asd',
         address: '奥术大师多',
     }
 ];
@@ -30,25 +28,16 @@ const columns = [
         key: 'phone',
     },
     {
-        title: '真实姓名',
-        dataIndex: 'realname',
-        key: 'realname',
-    },
-    {
-        title: '性别',
-        dataIndex: 'gender',
-        key: 'gender',
-    },
-    {
-        title: '邮箱',
-        dataIndex: 'email',
-        key: 'email',
+        title: '昵称',
+        dataIndex: 'nickname',
+        key: 'nickname',
     },
     {
         title: '地址',
         dataIndex: 'address',
         key: 'address',
     },
+    
 ];
 
 const AdminPage = () => {
@@ -90,6 +79,7 @@ const AdminPage = () => {
                         <Breadcrumb.Item>网站信息</Breadcrumb.Item>
                         <Breadcrumb.Item>用户管理</Breadcrumb.Item>
                     </Breadcrumb>
+                    <RouterView />
                     <Content
                         className="site-layout-background"
                         style={{
