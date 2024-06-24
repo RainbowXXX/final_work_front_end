@@ -66,7 +66,6 @@ const handleDelete = (record) => {
   console.log('Deleting:', record);
 };
 
-
 const GoodsPage: React.FC = () => {
   const onSearch = (value: any) => console.log(value);
   return (

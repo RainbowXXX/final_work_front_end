@@ -1,44 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, Link, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Outlet } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Table, Input, Button, Space } from 'antd';
 import { HomeOutlined, SettingOutlined, UserOutlined, ShoppingOutlined, FileDoneOutlined, LogoutOutlined } from '@ant-design/icons';
 
-const { Header, Content, Sider } = Layout;
-const { Search } = Input;
+const { Header, Sider } = Layout;
 
-const dataSource = [
-    {
-        key: '1',
-        username: 'user',
-        phone: '123123123',
-        nickname: 'asd',
-        address: '奥术大师多',
-    }
-];
-
-const columns = [
-    {
-        title: '用户名',
-        dataIndex: 'username',
-        key: 'username',
-    },
-    {
-        title: '手机号',
-        dataIndex: 'phone',
-        key: 'phone',
-    },
-    {
-        title: '昵称',
-        dataIndex: 'nickname',
-        key: 'nickname',
-    },
-    {
-        title: '地址',
-        dataIndex: 'address',
-        key: 'address',
-    },
-
-];
 
 const AdminPage = () => {
     const history = useNavigate()
