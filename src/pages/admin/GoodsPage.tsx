@@ -105,7 +105,6 @@ const GoodsPage = () => {
     setFileList(fileList);
   };
 
->>>>>>> a331a2f4108758359827e9a3868943bf46f8ebe0
   return (
     <div>
       <Content
@@ -117,8 +116,10 @@ const GoodsPage = () => {
         }}
       >
         <Space direction="vertical" style={{ width: '100%' }}>
-          <Search placeholder="请输入商品名" onSearch={onSearch} enterButton /><Button>增加</Button>
-          <Button type="primary" onClick={showModal}>增加商品</Button>
+          <div style={{ display: 'flex' }}>
+            <Search placeholder="请输入商品名" onSearch={onSearch} enterButton style={{ width: '300px', marginRight: '35px' }} />
+            <Button type="primary" onClick={showModal}>增加</Button>
+          </div>
           <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5, position: ['bottomCenter'] }} />
         </Space>
       </Content>

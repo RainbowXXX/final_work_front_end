@@ -87,7 +87,7 @@ const OrderPage: React.FC = () => {
         }}
       >
         <Space direction="vertical" style={{ width: '100%' }}>
-          <Search placeholder="请输入商品名" onSearch={onSearch} enterButton />
+          <Search placeholder="请输入订单号" onSearch={onSearch} enterButton style={{ width: '300px' }} />
           <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5, position: ['bottomCenter'] }} />
         </Space>
       </Content>
